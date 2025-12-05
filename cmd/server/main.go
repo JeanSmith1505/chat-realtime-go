@@ -2,25 +2,31 @@
 package main
 
 import (
-	"flag"
 	"log"
 	"net/http"
+	"os"
 
 	"github.com/jeans/chat-realtime-go/internal/chat"
 )
 
 func main() {
-	addr := flag.String("addr", ":8080", "http service address")
-	flag.Parse()
 
-	// Crear hub y arrancar
+	// Render asigna dinámicamente el PORT
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080" // Para local
+	}
+
+	addr := ":" + port
+
+	// Crear hub y arrancarlo
 	h := chat.NewHub()
 	go h.Run()
 
 	// Handlers
 	handler := chat.NewHandler(h)
 
-	// Servir archivos estáticos (CSS, JS, imágenes)
+	// Archivos estáticos (CSS, JS, imágenes)
 	fs := http.FileServer(http.Dir("./web/static"))
 	http.Handle("/static/", http.StripPrefix("/static/", fs))
 
@@ -29,11 +35,11 @@ func main() {
 
 	// Servir index.html en la raíz
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		http.ServeFile(w, r, "./web/static/index.html")
+		http.ServeFile(w, r, "./web/index.html") // <-- AQUÍ LA CORRECCIÓN
 	})
 
-	log.Printf("Servidor escuchando en %s\n", *addr)
-	if err := http.ListenAndServe(*addr, nil); err != nil {
-		log.Fatalf("ListenAndServe: %v", err)
+	log.Println("Servidor escuchando en", addr)
+	if err := http.ListenAndServe(addr, nil); err != nil {
+		log.Fatal("ListenAndServe:", err)
 	}
 }
