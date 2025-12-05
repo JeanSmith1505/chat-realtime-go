@@ -35,7 +35,7 @@ func main() {
 
 	// Servir index.html en la raíz
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		http.ServeFile(w, r, "./web/index.html")
+		http.ServeFile(w, r, "./web/static/index.html")
 	})
 
 	log.Println("Servidor escuchando en", addr)

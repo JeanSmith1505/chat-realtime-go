@@ -17,8 +17,8 @@ window.onload = () => {
 };
 
 function iniciarWebSocket() {
-    socket = new WebSocket(`wss://${window.location.host}/ws`);
-
+    let protocol = window.location.protocol === "https:" ? "wss" : "ws";
+    socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
 
     socket.onopen = () => console.log("Conectado");
 
