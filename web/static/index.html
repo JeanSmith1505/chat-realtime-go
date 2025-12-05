@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Chat Realtime Go</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+
+<!-- Modal usuario -->
+<div id="usernameModal" class="modal">
+    <div class="modal-content">
+        <h2>Ingresa tu nombre</h2>
+        <input id="usernameInput" type="text" placeholder="Tu nombre...">
+        <button id="saveUsername">Entrar</button>
+    </div>
+</div>
+
+<!-- Contenedor tipo WhatsApp -->
+<div id="chatContainer">
+
+    <!-- Header -->
+    <div id="chatHeader">
+        <img src="/static/user.png" id="chatAvatar">
+        <span id="chatTitle">Chat Realtime</span>
+    </div>
+
+    <!-- Mensajes -->
+    <div id="messages"></div>
+
+    <!-- Input -->
+    <div id="chatInput">
+        <input id="msg" type="text" placeholder="Escribe un mensaje..." disabled>
+        <button id="sendBtn" onclick="sendMsg()" disabled>➤</button>
+    </div>
+
+</div>
+
+<script src="/static/app.js"></script>
+</body>
+</html>

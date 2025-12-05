@@ -1,0 +1,15 @@
+// File: Makefile
+.PHONY: build run docker
+
+
+build:
+go build -o chat-server ./cmd/server
+
+
+run:
+go run ./cmd/server
+
+
+docker:
+docker build -t chat-realtime-go .
+
