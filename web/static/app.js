@@ -17,7 +17,8 @@ window.onload = () => {
 };
 
 function iniciarWebSocket() {
-    socket = new WebSocket("ws://localhost:8080/ws");
+    socket = new WebSocket(`wss://${window.location.host}/ws`);
+
 
     socket.onopen = () => console.log("Conectado");
 
