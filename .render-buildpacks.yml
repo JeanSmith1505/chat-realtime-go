@@ -1,0 +1,4 @@
+buildpacks:
+  - url: https://github.com/render-examples/render-go-buildpack
+env:
+  GO_VERSION: 1.25.6
