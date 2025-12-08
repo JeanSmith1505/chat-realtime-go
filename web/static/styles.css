@@ -36,13 +36,14 @@ body {
     display: flex;
     flex-direction: column;
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    overflow: hidden;
 }
 
-/* Header tipo WhatsApp */
+/* Header */
 #chatHeader {
     background: #075e54;
     color: white;
-    padding: 10px;
+    padding: 12px;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -55,32 +56,34 @@ body {
     border-radius: 50%;
 }
 
+/* Messages */
 #messages {
     flex: 1;
-    padding: 10px;
+    padding: 12px;
     overflow-y: auto;
-    /*background: url("/static/bg.png");*/
     background-size: cover;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
-/* Burbujas */
+/* Burbujas sin floats */
 .message {
-    max-width: 70%;
-    padding: 8px 12px;
-    margin: 5px 0;
+    max-width: 75%;
+    padding: 10px 14px;
     border-radius: 8px;
-    clear: both;
     display: inline-block;
+    font-size: 15px;
 }
 
 .me {
     background: #dcf8c6;
-    float: right;
+    align-self: flex-end;
 }
 
 .other {
     background: white;
-    float: left;
+    align-self: flex-start;
 }
 
 /* Input */
@@ -93,7 +96,7 @@ body {
 
 #msg {
     flex: 1;
-    padding: 8px;
+    padding: 10px 12px;
     border-radius: 20px;
     border: 1px solid #ccc;
 }
@@ -103,103 +106,76 @@ body {
     background: #075e54;
     border: none;
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
+    width: 42px;
+    height: 42px;
     color: white;
     font-size: 18px;
     cursor: pointer;
 }
 
-/* ===========================
-   📱 RESPONSIVE DESIGN
-   =========================== */
+/* ====================================
+   📱 RESPONSIVE
+   ==================================== */
 
-/* --- Pantallas pequeñas (celulares) --- */
+/* --- Celulares pequeños (320–480px) --- */
 @media screen and (max-width: 480px) {
 
     body {
-        padding: 0;
+        background: #ece5dd;
     }
 
     #chatContainer {
         width: 100%;
-        height: 100vh;
+        height: 100vh; 
+        margin: 0;
         border-radius: 0;
     }
 
     #chatHeader {
-        padding: 12px;
+        padding: 14px;
     }
 
-    #chatTitle {
-        font-size: 18px;
+    #chatAvatar {
+        width: 35px;
+        height: 35px;
     }
 
-    #messages {
-        padding: 10px;
+    .message {
+        max-width: 85%;
+        font-size: 14px;
+        padding: 9px 12px;
     }
 
     #msg {
-        font-size: 14px;
-        padding: 10px;
+        font-size: 15px;
     }
 
     #sendBtn {
-        padding: 10px 12px;
+        width: 40px;
+        height: 40px;
         font-size: 18px;
-    }
-
-
-    .message {
-        max-width: 80%;
-        font-size: 14px;
-        padding: 8px 12px;
     }
 }
 
-
+/* --- Tablets medianas (481–768px) --- */
 @media screen and (max-width: 768px) {
 
     #chatContainer {
         width: 90%;
-        height: 90vh;
-    }
-
-    #chatHeader {
-        padding: 15px;
+        height: 92vh;
     }
 
     .message {
-        max-width: 75%;
+        max-width: 80%;
         font-size: 15px;
-    }
-
-    #msg {
-        font-size: 15px;
-    }
-
-    #sendBtn {
-        font-size: 20px;
     }
 }
 
+/* --- Pantallas grandes (1024+) --- */
 @media screen and (min-width: 1024px) {
-
     #chatContainer {
         width: 450px;
         height: 90vh;
-    }
-
-    #chatTitle {
-        font-size: 20px;
-    }
-
-    #msg {
-        font-size: 15px;
-    }
-
-    .message {
-        font-size: 15px;
     }
 }
 
