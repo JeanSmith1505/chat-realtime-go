@@ -113,11 +113,7 @@ body {
     cursor: pointer;
 }
 
-/* ====================================
-   📱 RESPONSIVE
-   ==================================== */
 
-/* --- Celulares pequeños (320–480px) --- */
 @media screen and (max-width: 480px) {
 
     body {
