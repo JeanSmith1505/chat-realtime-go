@@ -109,3 +109,97 @@ body {
     font-size: 18px;
     cursor: pointer;
 }
+
+/* ===========================
+   📱 RESPONSIVE DESIGN
+   =========================== */
+
+/* --- Pantallas pequeñas (celulares) --- */
+@media screen and (max-width: 480px) {
+
+    body {
+        padding: 0;
+    }
+
+    #chatContainer {
+        width: 100%;
+        height: 100vh;
+        border-radius: 0;
+    }
+
+    #chatHeader {
+        padding: 12px;
+    }
+
+    #chatTitle {
+        font-size: 18px;
+    }
+
+    #messages {
+        padding: 10px;
+    }
+
+    #msg {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    #sendBtn {
+        padding: 10px 12px;
+        font-size: 18px;
+    }
+
+
+    .message {
+        max-width: 80%;
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+
+    #chatContainer {
+        width: 90%;
+        height: 90vh;
+    }
+
+    #chatHeader {
+        padding: 15px;
+    }
+
+    .message {
+        max-width: 75%;
+        font-size: 15px;
+    }
+
+    #msg {
+        font-size: 15px;
+    }
+
+    #sendBtn {
+        font-size: 20px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+
+    #chatContainer {
+        width: 450px;
+        height: 90vh;
+    }
+
+    #chatTitle {
+        font-size: 20px;
+    }
+
+    #msg {
+        font-size: 15px;
+    }
+
+    .message {
+        font-size: 15px;
+    }
+}
+
