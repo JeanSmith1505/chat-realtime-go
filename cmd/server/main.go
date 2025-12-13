@@ -11,7 +11,6 @@ import (
 
 func main() {
 
-	// Render asigna dinámicamente el PORT
 	port := os.Getenv("PORT")
 	if port == "" {
 		port = "8080" // Para local

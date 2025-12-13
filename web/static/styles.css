@@ -1,4 +1,4 @@
-/* Reset base */
+
 * {
     box-sizing: border-box;
 }
@@ -12,9 +12,7 @@ html, body {
     overflow: hidden;
 }
 
-/* =========================
-   Modal usuario
-========================= */
+
 .modal {
     position: fixed;
     inset: 0;
@@ -65,9 +63,7 @@ html, body {
     overflow: hidden;
 }
 
-/* =========================
-   Header
-========================= */
+
 #chatHeader {
     background: #075e54;
     color: white;
@@ -89,9 +85,7 @@ html, body {
     font-weight: 600;
 }
 
-/* =========================
-   Messages
-========================= */
+
 #messages {
     flex: 1;
     padding: 12px;
