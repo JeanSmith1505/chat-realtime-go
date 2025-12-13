@@ -1,11 +1,20 @@
-
-body {
-    margin: 0;
-    font-family: "Segoe UI", sans-serif;
-    background: #ece5dd;
+/* Reset base */
+* {
+    box-sizing: border-box;
 }
 
-/* Modal usuario */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: "Segoe UI", sans-serif;
+    background: #ece5dd;
+    overflow: hidden;
+}
+
+/* =========================
+   Modal usuario
+========================= */
 .modal {
     position: fixed;
     inset: 0;
@@ -24,7 +33,26 @@ body {
     text-align: center;
 }
 
-/* Chat Container */
+.modal-content input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.modal-content button {
+    margin-top: 12px;
+    width: 100%;
+    padding: 10px;
+    background: #075e54;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* =========================
+   Chat Container
+========================= */
 #chatContainer {
     width: 400px;
     height: 90vh;
@@ -37,7 +65,9 @@ body {
     overflow: hidden;
 }
 
-/* Header */
+/* =========================
+   Header
+========================= */
 #chatHeader {
     background: #075e54;
     color: white;
@@ -45,6 +75,7 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
+    flex-shrink: 0;
 }
 
 #chatAvatar {
@@ -53,7 +84,14 @@ body {
     border-radius: 50%;
 }
 
-/* Messages */
+#chatTitle {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* =========================
+   Messages
+========================= */
 #messages {
     flex: 1;
     padding: 12px;
@@ -61,6 +99,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 8px;
+    background: #e5ddd5;
 }
 
 /* Message bubbles */
@@ -82,11 +121,14 @@ body {
     align-self: flex-start;
 }
 
-/* Input */
+/* =========================
+   Input
+========================= */
 #chatInput {
     display: flex;
     padding: 10px;
     background: #f0f0f0;
+    flex-shrink: 0;
 }
 
 #msg {
@@ -95,6 +137,7 @@ body {
     border-radius: 20px;
     border: 1px solid #ccc;
     font-size: 16px;
+    outline: none;
 }
 
 #sendBtn {
@@ -109,12 +152,12 @@ body {
     cursor: pointer;
 }
 
-
+/* =========================
+   Mobile (Responsive)
+========================= */
 @media (max-width: 480px) {
 
     body {
-        margin: 0;
-        padding: 0;
         overflow: hidden;
     }
 
@@ -127,13 +170,10 @@ body {
         border-radius: 0;
     }
 
-    #chatHeader {
-        padding: 14px;
-        font-size: 16px;
-    }
-
     #messages {
         padding: 10px;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
     }
 
     .message {
@@ -141,16 +181,12 @@ body {
         font-size: 14px;
     }
 
-    #chatInput {
-        padding: 8px;
-    }
-
     #msg {
-        font-size: 16px; 
+        font-size: 16px;
+    }
 
     #sendBtn {
         width: 42px;
         height: 42px;
     }
-}
 }
